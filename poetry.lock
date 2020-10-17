@@ -42,6 +42,14 @@ phonenumbers = ["phonenumbers (>=7.0.2)"]
 phonenumberslite = ["phonenumberslite (>=7.0.2)"]
 
 [[package]]
+name = "phonenumbers"
+version = "8.12.11"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pytz"
 version = "2020.1"
 description = "World timezone definitions, modern and historical"
@@ -60,7 +68,7 @@ python-versions = ">=3.5"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "da8a3ca483a694ea1fea8791641b5f085dd10d4ff2145c9c3449a4c0a16a96b0"
+content-hash = "8fe4322824d37fef064ed21950f470dce7965e01dc8e27eec9971752c95d8c1c"
 
 [metadata.files]
 asgiref = [
@@ -74,6 +82,10 @@ django = [
 django-phonenumber-field = [
     {file = "django-phonenumber-field-5.0.0.tar.gz", hash = "sha256:1eb7af3a108744665f7c3939d38aa15b3728c57d13d45d656b0a2aa11e8cdc3c"},
     {file = "django_phonenumber_field-5.0.0-py3-none-any.whl", hash = "sha256:adb46905cc4ecb19d8494424e1c4352f24946bb472340a2a17257d44bf8228e6"},
+]
+phonenumbers = [
+    {file = "phonenumbers-8.12.11-py2.py3-none-any.whl", hash = "sha256:f5277ce92ac8813cb1f4174c6d1ee1fd08d563da28f9dec1f4bed0031a780a80"},
+    {file = "phonenumbers-8.12.11.tar.gz", hash = "sha256:17f39f06c1e0e20eabe69ff735b1c08e4547d12a12595da3d835fd3256a9ee0c"},
 ]
 pytz = [
     {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},

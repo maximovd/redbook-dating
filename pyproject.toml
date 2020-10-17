@@ -9,6 +9,7 @@ license = "Apache-2.0 License"
 python = "^3.8"
 Django = "^3.1.2"
 django-phonenumber-field = "^5.0.0"
+phonenumbers = "^8.12.11"
 
 [tool.poetry.dev-dependencies]
 
