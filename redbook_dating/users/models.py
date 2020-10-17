@@ -40,6 +40,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     phone = PhoneNumberField(unique=True, null=True, blank=True)
 
+    USERNAME_FIELD = 'username'
+
     def get_full_name(self):
         """Return full name for the user."""
         return f'{self.first_name} {self.last_name}'
