@@ -38,7 +38,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=False,
         blank=True,
     )
-    phone = PhoneNumberField(unique=True, null=True, blank=True)
+    phone = PhoneNumberField(
+        unique=True,
+        null=True,
+        blank=True,
+        verbose_name='номер телефона'
+    )
 
     USERNAME_FIELD = 'username'
 
