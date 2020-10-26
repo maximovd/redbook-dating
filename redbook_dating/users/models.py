@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 from phonenumber_field.modelfields import PhoneNumberField
-from django.core.exceptions import ValidationError
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -12,8 +12,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     login_validator = UnicodeUsernameValidator()
 
-    username = models.CharField(
-        _('username'),
+    nickname = models.CharField(
+        _('nickname'),
         max_length=200,
         null=False,
         blank=True,
@@ -45,7 +45,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name='номер телефона'
     )
 
-    USERNAME_FIELD = 'username'
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateField(default=timezone.now)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     def get_full_name(self):
         """Return full name for the user."""
@@ -53,7 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_username(self):
         """Return username for the user."""
-        return self.username
+        return self.nickname
 
     def __str__(self):
-        return f'Пользователь id={self.id} username={self.username}'
+        return f'Пользователь id={self.id} email={self.email}'
