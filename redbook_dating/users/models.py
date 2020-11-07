@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from phonenumber_field.modelfields import PhoneNumberField
 
+from .managers import CustomUserManager
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     """
@@ -51,6 +53,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
 
     def get_full_name(self):
         """Return full name for the user."""
